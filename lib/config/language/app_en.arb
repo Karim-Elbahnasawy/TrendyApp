@@ -1,0 +1,9 @@
+{
+    "create_account" : "Create Account",
+    "email" : "Email",
+    "password" : "Password",
+    "dark" : "Dark",
+    "light" : "Light",
+    "english" : "English",
+    "arabic"  : "عربى"
+}

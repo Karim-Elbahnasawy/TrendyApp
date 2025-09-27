@@ -1,0 +1,9 @@
+{
+    "create_account" : "انشاء حساب",
+    "email" : "البريد الالكترونى",
+    "password" : "كلمة المرور",
+    "dark" : "داكن",
+    "light" : "فاتح",
+    "english" : "English",
+    "arabic" : "عربى" 
+}
