@@ -139,6 +139,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'عربى'**
   String get arabic;
+
+  /// No description provided for @skip.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip'**
+  String get skip;
+
+  /// No description provided for @next.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get next;
+
+  /// No description provided for @register.
+  ///
+  /// In en, this message translates to:
+  /// **'Register'**
+  String get register;
+
+  /// No description provided for @login.
+  ///
+  /// In en, this message translates to:
+  /// **'Login'**
+  String get login;
+
+  /// No description provided for @choose_products.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose Products'**
+  String get choose_products;
+
+  /// No description provided for @make_payment.
+  ///
+  /// In en, this message translates to:
+  /// **'Make Payment'**
+  String get make_payment;
+
+  /// No description provided for @get_your_order.
+  ///
+  /// In en, this message translates to:
+  /// **'Get Your Order'**
+  String get get_your_order;
+
+  /// No description provided for @product_description.
+  ///
+  /// In en, this message translates to:
+  /// **'Browse our diverse range of products and choose what suits your needs. We have everything you\'re looking for, from electronics to fashion.'**
+  String get product_description;
+
+  /// No description provided for @payment_description.
+  ///
+  /// In en, this message translates to:
+  /// **'After selecting your products, you can complete the payment process easily and securely. We offer multiple payment options for your convenience.'**
+  String get payment_description;
+
+  /// No description provided for @order_description.
+  ///
+  /// In en, this message translates to:
+  /// **'You will receive your order on time and in top quality. We guarantee you a satisfying shopping experience from start to finish.'**
+  String get order_description;
 }
 
 class _AppLocalizationsDelegate

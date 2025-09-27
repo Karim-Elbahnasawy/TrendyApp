@@ -5,5 +5,16 @@
     "dark" : "Dark",
     "light" : "Light",
     "english" : "English",
-    "arabic"  : "عربى"
+    "arabic"  : "عربى",
+    "skip": "Skip",
+    "next": "Next",
+    "register": "Register",
+    "login": "Login",
+    "choose_products" : "Choose Products",
+    "make_payment" : "Make Payment",
+    "get_your_order" : "Get Your Order",
+    "product_description" : "Browse our diverse range of products and choose what suits your needs. We have everything you're looking for, from electronics to fashion.",
+    "payment_description" : "After selecting your products, you can complete the payment process easily and securely. We offer multiple payment options for your convenience.",
+    "order_description" : "You will receive your order on time and in top quality. We guarantee you a satisfying shopping experience from start to finish."
+
 }

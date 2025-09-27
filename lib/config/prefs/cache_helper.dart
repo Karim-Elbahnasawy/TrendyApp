@@ -34,4 +34,13 @@ class CacheHelper {
     String? savedLanguage = prefs.getString(AppConstants.languageKey);
     return savedLanguage;
   }
+
+  static bool saveOnBoarding() {
+    prefs.setBool(AppConstants.onBoardingKey, true);
+    return true;
+  }
+
+  static bool getOnBoarding() {
+    return prefs.getBool(AppConstants.onBoardingKey) ?? false;
+  }
 }

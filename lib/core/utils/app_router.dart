@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:trendy_app/core/utils/app_routes.dart';
 import 'package:trendy_app/features/auth/login/login.dart';
 import 'package:trendy_app/features/auth/register/register.dart';
+import 'package:trendy_app/features/on_boarding/on_boarding.dart';
+import 'package:trendy_app/features/splash/splash.dart';
 
 abstract class AppRouter {
   static Route? router(RouteSettings settings) {
@@ -13,6 +15,14 @@ abstract class AppRouter {
       case AppRoutes.login:
         {
           return CupertinoPageRoute(builder: (context) => Login());
+        }
+      case AppRoutes.splash:
+        {
+          return CupertinoPageRoute(builder: (context) => Splash());
+        }
+      case AppRoutes.onBoarding:
+        {
+          return CupertinoPageRoute(builder: (context) => OnBoarding());
         }
     }
     return null;
