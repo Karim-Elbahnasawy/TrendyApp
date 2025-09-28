@@ -1,4 +1,4 @@
-import 'package:flutter/rendering.dart';
+import 'package:flutter/material.dart';
 
 abstract class AppColors {
   static const Color primaryColor = Color(0xffF83758);
@@ -6,4 +6,7 @@ abstract class AppColors {
   static const Color blue = Color(0xff1F41BB);
   static const Color darkBlue = Color(0xff101127);
   static const Color grey = Color(0xffA8A8A9);
+  static const Color red = Colors.red;
+  static const Color black = Colors.black;
+  static const Color greyF3 = Color(0xffF3F3F3);
 }

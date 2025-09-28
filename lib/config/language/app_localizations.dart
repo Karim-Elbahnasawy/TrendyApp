@@ -199,6 +199,108 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'You will receive your order on time and in top quality. We guarantee you a satisfying shopping experience from start to finish.'**
   String get order_description;
+
+  /// No description provided for @confirm_password.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm Password'**
+  String get confirm_password;
+
+  /// No description provided for @or_continue_with.
+  ///
+  /// In en, this message translates to:
+  /// **'- OR Continue With -'**
+  String get or_continue_with;
+
+  /// No description provided for @i_already_have_an_account.
+  ///
+  /// In en, this message translates to:
+  /// **'I Already Have An Account'**
+  String get i_already_have_an_account;
+
+  /// No description provided for @forgot_password.
+  ///
+  /// In en, this message translates to:
+  /// **'Forgot Password ?'**
+  String get forgot_password;
+
+  /// No description provided for @submit.
+  ///
+  /// In en, this message translates to:
+  /// **'Submit'**
+  String get submit;
+
+  /// No description provided for @create_an_account.
+  ///
+  /// In en, this message translates to:
+  /// **'Create An Account'**
+  String get create_an_account;
+
+  /// No description provided for @sign_up.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign Up'**
+  String get sign_up;
+
+  /// No description provided for @welcome_Back.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome Back !'**
+  String get welcome_Back;
+
+  /// No description provided for @name.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get name;
+
+  /// No description provided for @name_required.
+  ///
+  /// In en, this message translates to:
+  /// **'Name Is Required'**
+  String get name_required;
+
+  /// No description provided for @name_length.
+  ///
+  /// In en, this message translates to:
+  /// **'Name Must Be 6 Characters'**
+  String get name_length;
+
+  /// No description provided for @email_required.
+  ///
+  /// In en, this message translates to:
+  /// **'Email Is Required'**
+  String get email_required;
+
+  /// No description provided for @email_bad_format.
+  ///
+  /// In en, this message translates to:
+  /// **'Email bad format'**
+  String get email_bad_format;
+
+  /// No description provided for @password_required.
+  ///
+  /// In en, this message translates to:
+  /// **'Password Is Required'**
+  String get password_required;
+
+  /// No description provided for @weak_password.
+  ///
+  /// In en, this message translates to:
+  /// **'Weak Password'**
+  String get weak_password;
+
+  /// No description provided for @confirm_password_required.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm Password Is Required'**
+  String get confirm_password_required;
+
+  /// No description provided for @password_not_match.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm Password Not Match'**
+  String get password_not_match;
 }
 
 class _AppLocalizationsDelegate

@@ -61,4 +61,55 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get order_description =>
       'ستتلقى طلبك في الوقت المحدد وبأعلى جودة. نحن نضمن لك تجربة تسوق مرضية من البداية إلى النهاية.';
+
+  @override
+  String get confirm_password => 'تأكيد كلمة المرور';
+
+  @override
+  String get or_continue_with => '- أو المتابعة باستخدام -';
+
+  @override
+  String get i_already_have_an_account => 'لدي حساب بالفعل';
+
+  @override
+  String get forgot_password => 'نسيت كلمة المرور ؟';
+
+  @override
+  String get submit => 'إرسال';
+
+  @override
+  String get create_an_account => 'إنشاء حساب';
+
+  @override
+  String get sign_up => 'التسجيل';
+
+  @override
+  String get welcome_Back => 'مرحبًا بعودتك !';
+
+  @override
+  String get name => 'الاسم';
+
+  @override
+  String get name_required => 'الاسم مطلوب';
+
+  @override
+  String get name_length => 'يجب أن يكون الاسم ستة أحرف';
+
+  @override
+  String get email_required => 'البريد الإلكتروني مطلوب';
+
+  @override
+  String get email_bad_format => 'تنسيق البريد الإلكتروني خاطئ';
+
+  @override
+  String get password_required => 'كلمة المرور مطلوبة';
+
+  @override
+  String get weak_password => 'كلمة المرور ضعيفة';
+
+  @override
+  String get confirm_password_required => 'تأكيد كلمة المرور مطلوب';
+
+  @override
+  String get password_not_match => 'تأكيد كلمة المرور غير متطابق';
 }

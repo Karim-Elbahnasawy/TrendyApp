@@ -15,6 +15,23 @@
     "get_your_order" : "Get Your Order",
     "product_description" : "Browse our diverse range of products and choose what suits your needs. We have everything you're looking for, from electronics to fashion.",
     "payment_description" : "After selecting your products, you can complete the payment process easily and securely. We offer multiple payment options for your convenience.",
-    "order_description" : "You will receive your order on time and in top quality. We guarantee you a satisfying shopping experience from start to finish."
-
+    "order_description" : "You will receive your order on time and in top quality. We guarantee you a satisfying shopping experience from start to finish.",
+    "confirm_password" : "Confirm Password",
+    "or_continue_with" : "- OR Continue With -",
+    "i_already_have_an_account" : "I Already Have An Account",
+    "forgot_password" : "Forgot Password ?",
+    "submit" : "Submit",
+    "create_an_account" : "Create An Account",
+    "sign_up" : "Sign Up",
+    "welcome_Back" : "Welcome Back !",
+    "name" : "Name",
+    "name_required": "Name Is Required",
+    "name_length": "Name Must Be 6 Characters",
+    "email_required": "Email Is Required",
+    "email_bad_format": "Email bad format",
+    "password_required": "Password Is Required",
+    "weak_password": "Weak Password",
+    "confirm_password_required": "Confirm Password Is Required",
+    "password_not_match": "Confirm Password Not Match"
+    
 }

@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:trendy_app/core/utils/app_routes.dart';
+import 'package:trendy_app/features/auth/forget_password/forget_password.dart';
 import 'package:trendy_app/features/auth/login/login.dart';
 import 'package:trendy_app/features/auth/register/register.dart';
+import 'package:trendy_app/features/main_layout/main_layout.dart';
 import 'package:trendy_app/features/on_boarding/on_boarding.dart';
 import 'package:trendy_app/features/splash/splash.dart';
 
@@ -23,6 +25,14 @@ abstract class AppRouter {
       case AppRoutes.onBoarding:
         {
           return CupertinoPageRoute(builder: (context) => OnBoarding());
+        }
+      case AppRoutes.fogetPassword:
+        {
+          return CupertinoPageRoute(builder: (context) => ForgetPassword());
+        }
+      case AppRoutes.mainLayout:
+        {
+          return CupertinoPageRoute(builder: (context) => MainLayout());
         }
     }
     return null;

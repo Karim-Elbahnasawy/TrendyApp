@@ -98,7 +98,6 @@ class _OnBoardingState extends State<OnBoarding> {
                       effect: WormEffect(
                         activeDotColor: AppColors.primaryColor,
                         dotColor: AppColors.grey,
-
                         dotHeight: 10.h,
                         dotWidth: 25.w,
                       ),

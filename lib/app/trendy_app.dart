@@ -21,7 +21,7 @@ class TrendyApp extends StatelessWidget {
       minTextAdapt: true,
       builder: (context, child) => MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: AppRoutes.splash,
+        initialRoute: AppRoutes.mainLayout,
         onGenerateRoute: AppRouter.router,
         theme: AppTheme.light,
         darkTheme: AppTheme.dark,

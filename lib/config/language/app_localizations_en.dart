@@ -61,4 +61,55 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get order_description =>
       'You will receive your order on time and in top quality. We guarantee you a satisfying shopping experience from start to finish.';
+
+  @override
+  String get confirm_password => 'Confirm Password';
+
+  @override
+  String get or_continue_with => '- OR Continue With -';
+
+  @override
+  String get i_already_have_an_account => 'I Already Have An Account';
+
+  @override
+  String get forgot_password => 'Forgot Password ?';
+
+  @override
+  String get submit => 'Submit';
+
+  @override
+  String get create_an_account => 'Create An Account';
+
+  @override
+  String get sign_up => 'Sign Up';
+
+  @override
+  String get welcome_Back => 'Welcome Back !';
+
+  @override
+  String get name => 'Name';
+
+  @override
+  String get name_required => 'Name Is Required';
+
+  @override
+  String get name_length => 'Name Must Be 6 Characters';
+
+  @override
+  String get email_required => 'Email Is Required';
+
+  @override
+  String get email_bad_format => 'Email bad format';
+
+  @override
+  String get password_required => 'Password Is Required';
+
+  @override
+  String get weak_password => 'Weak Password';
+
+  @override
+  String get confirm_password_required => 'Confirm Password Is Required';
+
+  @override
+  String get password_not_match => 'Confirm Password Not Match';
 }

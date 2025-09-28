@@ -36,7 +36,9 @@ class _SplashState extends State<Splash> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [SvgPicture.asset(AppAssets.logo)],
+        children: [
+          SvgPicture.asset(AppAssets.logo),
+          ],
       ),
     );
   }
