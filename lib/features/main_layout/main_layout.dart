@@ -1,30 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:trendy_app/config/language/app_localizations.dart';
 import 'package:trendy_app/core/utils/app_colors.dart';
 import 'package:trendy_app/features/main_layout/tabs/cart_tab/cart_tab.dart';
 import 'package:trendy_app/features/main_layout/tabs/favourite_tab/favourite_tab.dart';
 import 'package:trendy_app/features/main_layout/tabs/home_tab/home_tab.dart';
 import 'package:trendy_app/features/main_layout/tabs/profile_tab/profile_tab.dart';
+import 'package:trendy_app/providers/favourite_provider.dart';
+
 class MainLayout extends StatefulWidget {
   const MainLayout({super.key});
 
   @override
   State<MainLayout> createState() => _MainLayoutState();
 }
+
 class _MainLayoutState extends State<MainLayout> {
   int _selectedIndex = 0;
-  List<Widget> tabs = [
-    HomeTab(),
-    FavouriteTab(),
-    CartTab(), 
-    ProfileTab(),
-    ];
+  List<Widget> tabs = [HomeTab(), FavouriteTab(), CartTab(), ProfileTab()];
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: tabs[_selectedIndex],
-      bottomNavigationBar: _buildNavBar(),
+    return ChangeNotifierProvider(
+      create: (context) => FavouriteProvider(),
+      child: Scaffold(
+        body: tabs[_selectedIndex],
+        bottomNavigationBar: _buildNavBar(),
+      ),
     );
   }
 

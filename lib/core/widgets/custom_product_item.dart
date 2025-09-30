@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
+import 'package:trendy_app/core/utils/app_colors.dart';
 import 'package:trendy_app/core/utils/app_routes.dart';
 import 'package:trendy_app/models/product_model.dart';
+import 'package:trendy_app/providers/favourite_provider.dart';
 
 class CustomProductItem extends StatelessWidget {
   const CustomProductItem({super.key, required this.productModel});
@@ -11,9 +14,15 @@ class CustomProductItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final TextTheme textTheme = Theme.of(context).textTheme;
-    return GestureDetector(
+    final FavouriteProvider favouriteProvider = Provider.of<FavouriteProvider>(context);
+    final bool isFavourite = favouriteProvider.favouriteProducts.contains( productModel);
+     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context,AppRoutes.productDetails,arguments: productModel);
+        Navigator.pushNamed(
+          context,
+          AppRoutes.productDetails,
+          arguments: productModel,
+        );
       },
       child: Card(
         elevation: 5,
@@ -39,8 +48,12 @@ class CustomProductItem extends StatelessWidget {
                 children: [
                   Text(productModel.name, style: textTheme.headlineMedium),
                   IconButton(
-                    onPressed: () {},
-                    icon: Icon(Icons.favorite_outline),
+                    onPressed: () {
+                      favouriteProvider.addToFavourite(productModel);
+                    },
+                    icon: isFavourite
+                        ? Icon(Icons.favorite, color: AppColors.red)
+                        : Icon(Icons.favorite_border_outlined),
                   ),
                 ],
               ),

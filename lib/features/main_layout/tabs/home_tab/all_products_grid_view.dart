@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:trendy_app/core/widgets/custom_product_item.dart';
 import 'package:trendy_app/models/product_model.dart';
 
-class CustomProductsGridView extends StatelessWidget {
-  const CustomProductsGridView({super.key});
+class AllProductsGridView extends StatelessWidget {
+  const AllProductsGridView({super.key});
 
   @override
   Widget build(BuildContext context) {
