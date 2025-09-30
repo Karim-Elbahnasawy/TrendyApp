@@ -1,68 +1,121 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:trendy_app/config/language/app_localizations.dart';
 import 'package:trendy_app/core/utils/app_colors.dart';
-import 'package:trendy_app/core/utils/app_constants.dart';
-import 'package:trendy_app/providers/language_provider.dart';
-import 'package:trendy_app/providers/theme_provider.dart';
-
-class MainLayout extends StatelessWidget {
+import 'package:trendy_app/features/main_layout/tabs/cart_tab/cart_tab.dart';
+import 'package:trendy_app/features/main_layout/tabs/favourite_tab/favourite_tab.dart';
+import 'package:trendy_app/features/main_layout/tabs/home_tab/home_tab.dart';
+import 'package:trendy_app/features/main_layout/tabs/profile_tab/profile_tab.dart';
+class MainLayout extends StatefulWidget {
   const MainLayout({super.key});
 
   @override
+  State<MainLayout> createState() => _MainLayoutState();
+}
+class _MainLayoutState extends State<MainLayout> {
+  int _selectedIndex = 0;
+  List<Widget> tabs = [
+    HomeTab(),
+    FavouriteTab(),
+    CartTab(), 
+    ProfileTab(),
+    ];
+
+  @override
   Widget build(BuildContext context) {
-    AppLocalizations appLocalizations = AppLocalizations.of(context)!;
-    ThemeProvider themeProvider = Provider.of<ThemeProvider>(context);
-    LanguageProvider languageProvider = Provider.of<LanguageProvider>(context);
-    TextTheme textTheme = Theme.of(context).textTheme;
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Row(
-            children: [  
-                       
-            ],
+      body: tabs[_selectedIndex],
+      bottomNavigationBar: _buildNavBar(),
+    );
+  }
+
+  void _onIconClicked(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  Widget _buildNavBar() {
+    final AppLocalizations appLocalizations = AppLocalizations.of(context)!;
+    return Theme(
+      data: Theme.of(context).copyWith(
+        splashColor: Colors.transparent,
+        highlightColor: Colors.transparent,
+      ),
+      child: BottomNavigationBar(
+        currentIndex: _selectedIndex,
+        onTap: _onIconClicked,
+        items: [
+          BottomNavigationBarItem(
+            icon: _selectedIndex == 0
+                ? CircleAvatar(
+                    radius: 28,
+                    backgroundColor: AppColors.pink,
+                    child: Icon(
+                      size: 28,
+                      Icons.home_outlined,
+                      color: AppColors.white,
+                    ),
+                  )
+                : Icon(
+                    size: 28,
+                    Icons.home_outlined,
+                    color: Theme.of(context).primaryColorDark,
+                  ),
+            label: appLocalizations.home,
           ),
-          SwitchListTile(
-            selected: true,
-            activeTrackColor: AppColors.blue,
-            title: Text(
-              themeProvider.isDark
-                  ? appLocalizations.dark
-                  : appLocalizations.light,
-              style: textTheme.titleSmall,
-            ),
-            secondary: Icon(
-              size: 30,
-              themeProvider.isDark ? Icons.dark_mode : Icons.light_mode,
-            ),
-            value: themeProvider.isLight,
-            onChanged: (newTheme) {
-              themeProvider.changeAppTheme(
-                newTheme ? ThemeMode.light : ThemeMode.dark,
-              );
-            },
+          BottomNavigationBarItem(
+            icon: _selectedIndex == 1
+                ? CircleAvatar(
+                    radius: 28,
+                    backgroundColor: AppColors.pink,
+                    child: Icon(
+                      Icons.favorite_outline,
+                      size: 28,
+                      color: AppColors.white,
+                    ),
+                  )
+                : Icon(
+                    Icons.favorite_outline,
+                    size: 28,
+                    color: Theme.of(context).primaryColorDark,
+                  ),
+            label: appLocalizations.favourite,
           ),
-          SwitchListTile(
-            selected: true,
-            activeTrackColor: AppColors.blue,
-            title: Text(
-              languageProvider.isEnglish
-                  ? appLocalizations.english
-                  : appLocalizations.arabic,
-              style: textTheme.titleSmall,
-            ),
-            secondary: Icon(
-              size: 30,
-              languageProvider.isEnglish ? Icons.language : Icons.language,
-            ),
-            value: languageProvider.isEnglish,
-            onChanged: (newTheme) {
-              languageProvider.changeAppLanguage(
-                newTheme ? AppConstants.english : AppConstants.arabic,
-              );
-            },
+          BottomNavigationBarItem(
+            icon: _selectedIndex == 2
+                ? CircleAvatar(
+                    radius: 28,
+                    backgroundColor: AppColors.pink,
+                    child: Icon(
+                      size: 28,
+                      Icons.shopping_cart_outlined,
+                      color: AppColors.white,
+                    ),
+                  )
+                : Icon(
+                    size: 28,
+                    Icons.shopping_cart_outlined,
+                    color: Theme.of(context).primaryColorDark,
+                  ),
+            label: appLocalizations.cart,
+          ),
+          BottomNavigationBarItem(
+            icon: _selectedIndex == 3
+                ? CircleAvatar(
+                    radius: 28,
+                    backgroundColor: AppColors.pink,
+                    child: Icon(
+                      size: 28,
+                      Icons.person_outline,
+                      color: AppColors.white,
+                    ),
+                  )
+                : Icon(
+                    size: 28,
+                    Icons.person_outline,
+                    color: Theme.of(context).primaryColorDark,
+                  ),
+            label: appLocalizations.profile,
           ),
         ],
       ),

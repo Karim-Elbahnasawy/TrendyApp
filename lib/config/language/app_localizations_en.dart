@@ -51,8 +51,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get get_your_order => 'Get Your Order';
 
   @override
-  String get product_description =>
-      'Browse our diverse range of products and choose what suits your needs. We have everything you\'re looking for, from electronics to fashion.';
+  String get product_description => 'The Material Is Cotton';
 
   @override
   String get payment_description =>
@@ -112,4 +111,61 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get password_not_match => 'Confirm Password Not Match';
+
+  @override
+  String get home => 'Home';
+
+  @override
+  String get favourite => 'Favourite';
+
+  @override
+  String get cart => 'Cart';
+
+  @override
+  String get profile => 'Profile';
+
+  @override
+  String get search_for_any_product => 'Search For Any Product';
+
+  @override
+  String get all_categories => 'All Categories';
+
+  @override
+  String get kids => 'Kids';
+
+  @override
+  String get mens => 'Mens';
+
+  @override
+  String get womens => 'Womens';
+
+  @override
+  String get shoses => 'Shoses';
+
+  @override
+  String get shop_now => 'Shop Now';
+
+  @override
+  String get product_details => 'Product Details';
+
+  @override
+  String get buy_now => 'Buy Now';
+
+  @override
+  String get add_to_cart => 'Add To Cart';
+
+  @override
+  String get offer_title => 'You Can Buy Shirts';
+
+  @override
+  String get product_name => 'T_Shirt';
+
+  @override
+  String get product_price => '400';
+
+  @override
+  String get product_rate => '4.5';
+
+  @override
+  String get discount => '50-40 % OFF';
 }

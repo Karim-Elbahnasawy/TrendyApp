@@ -32,6 +32,26 @@
     "password_required": "كلمة المرور مطلوبة",
     "weak_password": "كلمة المرور ضعيفة",
     "confirm_password_required": "تأكيد كلمة المرور مطلوب",
-    "password_not_match": "تأكيد كلمة المرور غير متطابق"
+    "password_not_match": "تأكيد كلمة المرور غير متطابق",
+    "home": "الرئيسية",
+    "favourite": "المفضلة",
+    "cart": "عربة التسوق",
+    "profile": "الملف الشخصي",
+    "search_for_any_product": "بحث عن أي منتج",
+    "all_categories": "جميع الفئات",
+    "kids": "الأطفال",
+    "mens": "الرجال",
+    "womens": "النساء",
+    "shoes": "الأحذية",
+    "shop_now": "تسوق الآن",
+    "product_details": "تفاصيل المنتج",
+    "buy_now": "اشترِ الآن",
+    "add_to_cart": "أضف إلى السلة",
+    "offer_title": "يمكنك شراء قمصان",
+    "product_name": "تي شيرت",
+    "product_description": "المادةالخام قطن",
+    "product_price": "400",
+    "product_rate": "4.5",
+    "discount": "50-40 % خصم"
 
 }

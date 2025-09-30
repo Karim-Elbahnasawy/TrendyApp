@@ -4,7 +4,7 @@ import 'package:trendy_app/core/utils/app_constants.dart';
 
 class LanguageProvider extends ChangeNotifier {
   String currentLanguage =
-      CacheHelper.getSavedLanguage() ?? AppConstants.arabic;
+      CacheHelper.getSavedLanguage() ?? AppConstants.english;
 
   void changeAppLanguage(String newLanguage) {
     if (currentLanguage == newLanguage) return;

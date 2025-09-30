@@ -51,8 +51,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get get_your_order => 'استلم طلبك';
 
   @override
-  String get product_description =>
-      'استعرض مجموعتنا المتنوعة من المنتجات واختر ما يناسب احتياجاتك. لدينا كل ما تبحث عنه، من الإلكترونيات إلى الأزياء.';
+  String get product_description => 'المادةالخام قطن';
 
   @override
   String get payment_description =>
@@ -112,4 +111,61 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get password_not_match => 'تأكيد كلمة المرور غير متطابق';
+
+  @override
+  String get home => 'الرئيسية';
+
+  @override
+  String get favourite => 'المفضلة';
+
+  @override
+  String get cart => 'عربة التسوق';
+
+  @override
+  String get profile => 'الملف الشخصي';
+
+  @override
+  String get search_for_any_product => 'بحث عن أي منتج';
+
+  @override
+  String get all_categories => 'جميع الفئات';
+
+  @override
+  String get kids => 'الأطفال';
+
+  @override
+  String get mens => 'الرجال';
+
+  @override
+  String get womens => 'النساء';
+
+  @override
+  String get shoses => 'Shoses';
+
+  @override
+  String get shop_now => 'تسوق الآن';
+
+  @override
+  String get product_details => 'تفاصيل المنتج';
+
+  @override
+  String get buy_now => 'اشترِ الآن';
+
+  @override
+  String get add_to_cart => 'أضف إلى السلة';
+
+  @override
+  String get offer_title => 'يمكنك شراء قمصان';
+
+  @override
+  String get product_name => 'تي شيرت';
+
+  @override
+  String get product_price => '400';
+
+  @override
+  String get product_rate => '4.5';
+
+  @override
+  String get discount => '50-40 % خصم';
 }

@@ -32,6 +32,27 @@
     "password_required": "Password Is Required",
     "weak_password": "Weak Password",
     "confirm_password_required": "Confirm Password Is Required",
-    "password_not_match": "Confirm Password Not Match"
+    "password_not_match": "Confirm Password Not Match",
+    "home" : "Home",
+    "favourite" :"Favourite",
+    "cart" :"Cart",
+    "profile" :"Profile",
+    "search_for_any_product" : "Search For Any Product",
+    "all_categories" : "All Categories",
+    "all_categories" : "All Categories",
+     "kids" : "Kids",
+     "mens" : "Mens",
+     "womens" : "Womens",
+     "shoses" : "Shoses",
+     "shop_now" : "Shop Now",
+     "product_details" : "Product Details",
+     "buy_now" : "Buy Now",
+     "add_to_cart" : "Add To Cart",
+     "offer_title" :"You Can Buy Shirts",
+     "product_name" : "T_Shirt",
+     "product_description" : "The Material Is Cotton",
+     "product_price" : "400",
+     "product_rate" : "4.5",
+     "discount" : "50-40 % OFF"
     
 }

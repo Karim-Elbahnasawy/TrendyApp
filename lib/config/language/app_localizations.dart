@@ -185,7 +185,7 @@ abstract class AppLocalizations {
   /// No description provided for @product_description.
   ///
   /// In en, this message translates to:
-  /// **'Browse our diverse range of products and choose what suits your needs. We have everything you\'re looking for, from electronics to fashion.'**
+  /// **'The Material Is Cotton'**
   String get product_description;
 
   /// No description provided for @payment_description.
@@ -301,6 +301,120 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Confirm Password Not Match'**
   String get password_not_match;
+
+  /// No description provided for @home.
+  ///
+  /// In en, this message translates to:
+  /// **'Home'**
+  String get home;
+
+  /// No description provided for @favourite.
+  ///
+  /// In en, this message translates to:
+  /// **'Favourite'**
+  String get favourite;
+
+  /// No description provided for @cart.
+  ///
+  /// In en, this message translates to:
+  /// **'Cart'**
+  String get cart;
+
+  /// No description provided for @profile.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile'**
+  String get profile;
+
+  /// No description provided for @search_for_any_product.
+  ///
+  /// In en, this message translates to:
+  /// **'Search For Any Product'**
+  String get search_for_any_product;
+
+  /// No description provided for @all_categories.
+  ///
+  /// In en, this message translates to:
+  /// **'All Categories'**
+  String get all_categories;
+
+  /// No description provided for @kids.
+  ///
+  /// In en, this message translates to:
+  /// **'Kids'**
+  String get kids;
+
+  /// No description provided for @mens.
+  ///
+  /// In en, this message translates to:
+  /// **'Mens'**
+  String get mens;
+
+  /// No description provided for @womens.
+  ///
+  /// In en, this message translates to:
+  /// **'Womens'**
+  String get womens;
+
+  /// No description provided for @shoses.
+  ///
+  /// In en, this message translates to:
+  /// **'Shoses'**
+  String get shoses;
+
+  /// No description provided for @shop_now.
+  ///
+  /// In en, this message translates to:
+  /// **'Shop Now'**
+  String get shop_now;
+
+  /// No description provided for @product_details.
+  ///
+  /// In en, this message translates to:
+  /// **'Product Details'**
+  String get product_details;
+
+  /// No description provided for @buy_now.
+  ///
+  /// In en, this message translates to:
+  /// **'Buy Now'**
+  String get buy_now;
+
+  /// No description provided for @add_to_cart.
+  ///
+  /// In en, this message translates to:
+  /// **'Add To Cart'**
+  String get add_to_cart;
+
+  /// No description provided for @offer_title.
+  ///
+  /// In en, this message translates to:
+  /// **'You Can Buy Shirts'**
+  String get offer_title;
+
+  /// No description provided for @product_name.
+  ///
+  /// In en, this message translates to:
+  /// **'T_Shirt'**
+  String get product_name;
+
+  /// No description provided for @product_price.
+  ///
+  /// In en, this message translates to:
+  /// **'400'**
+  String get product_price;
+
+  /// No description provided for @product_rate.
+  ///
+  /// In en, this message translates to:
+  /// **'4.5'**
+  String get product_rate;
+
+  /// No description provided for @discount.
+  ///
+  /// In en, this message translates to:
+  /// **'50-40 % OFF'**
+  String get discount;
 }
 
 class _AppLocalizationsDelegate

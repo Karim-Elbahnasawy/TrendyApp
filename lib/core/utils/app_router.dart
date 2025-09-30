@@ -5,7 +5,9 @@ import 'package:trendy_app/features/auth/login/login.dart';
 import 'package:trendy_app/features/auth/register/register.dart';
 import 'package:trendy_app/features/main_layout/main_layout.dart';
 import 'package:trendy_app/features/on_boarding/on_boarding.dart';
+import 'package:trendy_app/features/product_details/product_details.dart';
 import 'package:trendy_app/features/splash/splash.dart';
+import 'package:trendy_app/models/product_model.dart';
 
 abstract class AppRouter {
   static Route? router(RouteSettings settings) {
@@ -33,6 +35,13 @@ abstract class AppRouter {
       case AppRoutes.mainLayout:
         {
           return CupertinoPageRoute(builder: (context) => MainLayout());
+        }
+      case AppRoutes.productDetails:
+        {
+          ProductModel productModel = settings.arguments as ProductModel;
+          return CupertinoPageRoute(
+            builder: (context) => ProductDetails(productModel: productModel),
+          );
         }
     }
     return null;

@@ -96,7 +96,7 @@ class _OnBoardingState extends State<OnBoarding> {
                           ),
                     SmoothPageIndicator(
                       effect: WormEffect(
-                        activeDotColor: AppColors.primaryColor,
+                        activeDotColor: AppColors.pink,
                         dotColor: AppColors.grey,
                         dotHeight: 10.h,
                         dotWidth: 25.w,
@@ -118,7 +118,7 @@ class _OnBoardingState extends State<OnBoarding> {
                                 vertical: 8,
                               ),
                               decoration: BoxDecoration(
-                                color: AppColors.primaryColor,
+                                color: AppColors.pink,
                                 borderRadius: BorderRadius.circular(16),
                               ),
                               child: Text(
@@ -141,7 +141,7 @@ class _OnBoardingState extends State<OnBoarding> {
                                 vertical: 8,
                               ),
                               decoration: BoxDecoration(
-                                color: AppColors.primaryColor,
+                                color: AppColors.pink,
                                 borderRadius: BorderRadius.circular(16),
                               ),
                               child: Text(

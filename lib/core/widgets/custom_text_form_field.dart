@@ -24,7 +24,7 @@ class CustomTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      cursorColor: AppColors.primaryColor,
+      cursorColor: AppColors.pink,
       cursorWidth: 3,
       cursorHeight: 25,
       keyboardType: keyboardType,

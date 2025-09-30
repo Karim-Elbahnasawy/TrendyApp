@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
-class MyWidget extends StatelessWidget {
-  const MyWidget({super.key});
+class CartTab extends StatelessWidget {
+  const CartTab({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(color: Colors.amber);
+    return Container(
+      color: Theme.of(context).primaryColor,
+      );
   }
 }
