@@ -18,6 +18,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get password => 'كلمة المرور';
 
   @override
+  String get phone_number => 'رقم الهاتف';
+
+  @override
   String get dark => 'داكن';
 
   @override
@@ -101,6 +104,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get email_bad_format => 'تنسيق البريد الإلكتروني خاطئ';
 
   @override
+  String get phone_required => 'رقم الهاتف مطلوب';
+
+  @override
+  String get phone_bad_format => 'تنسيق رقم الهاتف غير صحيح';
+
+  @override
   String get password_required => 'كلمة المرور مطلوبة';
 
   @override
@@ -122,7 +131,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get cart => 'عربة التسوق';
 
   @override
-  String get profile => 'الملف الشخصي';
+  String get profile => 'الملف الشخصى';
 
   @override
   String get search_for_any_product => 'بحث عن أي منتج';
@@ -140,7 +149,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get womens => 'النساء';
 
   @override
-  String get shoses => 'Shoses';
+  String get shoses => 'الأحذية';
 
   @override
   String get shop_now => 'تسوق الآن';
@@ -168,4 +177,22 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get discount => '50-40 % خصم';
+
+  @override
+  String get edit_profile => 'تعديل الملف الشخصى';
+
+  @override
+  String get logout => 'تسجيل الخروج';
+
+  @override
+  String get phone => 'رقم الهاتف';
+
+  @override
+  String get location => 'الموقع';
+
+  @override
+  String get no_items_favourite => 'لم تُضاف أي عناصر إلى المفضلة بعد';
+
+  @override
+  String get no_items_cart => 'لم تُضاف أي عناصر إلى السلة بعد';
 }

@@ -18,6 +18,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get password => 'Password';
 
   @override
+  String get phone_number => 'Phone Number';
+
+  @override
   String get dark => 'Dark';
 
   @override
@@ -51,7 +54,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get get_your_order => 'Get Your Order';
 
   @override
-  String get product_description => 'The Material Is Cotton';
+  String get product_description =>
+      'The Material Is Cotton And One Of The Most Seller Items In This Summer And Provide From It Many Colors';
 
   @override
   String get payment_description =>
@@ -99,6 +103,12 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get email_bad_format => 'Email bad format';
+
+  @override
+  String get phone_required => 'Phone Number Is Required';
+
+  @override
+  String get phone_bad_format => 'Phone Number Bad Format';
 
   @override
   String get password_required => 'Password Is Required';
@@ -168,4 +178,22 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get discount => '50-40 % OFF';
+
+  @override
+  String get edit_profile => 'Edit Profile';
+
+  @override
+  String get logout => 'Log Out';
+
+  @override
+  String get phone => 'Phone Number';
+
+  @override
+  String get location => 'Location';
+
+  @override
+  String get no_items_favourite => 'No Items Added To Favourite Yet';
+
+  @override
+  String get no_items_cart => 'No Items Added To Cart Yet';
 }

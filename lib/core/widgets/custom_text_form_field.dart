@@ -10,7 +10,7 @@ class CustomTextFormField extends StatelessWidget {
     this.suffixIcon,
     this.prefixIcon,
     this.keyboardType,
-    this.obscureText = false,
+    this.obscureText = false, this.onChanged,
   });
 
   final String? Function(String?)? validator;
@@ -20,10 +20,12 @@ class CustomTextFormField extends StatelessWidget {
   final Widget? prefixIcon;
   final TextInputType? keyboardType;
   final bool obscureText;
+ final void Function(String)? onChanged;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      onChanged: onChanged,
       cursorColor: AppColors.pink,
       cursorWidth: 3,
       cursorHeight: 25,

@@ -51,12 +51,12 @@ class _ForgetPasswordState extends State<ForgetPassword> {
           child: Column(
             children: [
               SvgPicture.asset(AppAssets.appLogo),
-              SizedBox(height: 25.h),
+              SizedBox(height: 20.h),
               Text(
                 appLocalizations.forgot_password,
                 style: textTheme.titleMedium,
               ),
-              SizedBox(height: 25.h),
+              SizedBox(height: 20.h),
               Form(
                 key: _formKey,
                 child: Padding(
@@ -66,6 +66,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                     bottom: MediaQuery.of(context).viewInsets.bottom,
                   ),
                   child: Column(
+                    spacing: 15.h,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       CustomTextFormField(
@@ -76,7 +77,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                         prefixIcon: Image.asset(AppIcons.email),
                         keyboardType: TextInputType.emailAddress,
                       ),
-                      SizedBox(height: 25.h),
+                    
                       CustomElvatedButton(
                         text: appLocalizations.submit,
                         onPressed: () {

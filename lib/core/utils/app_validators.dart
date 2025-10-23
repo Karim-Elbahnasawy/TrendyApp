@@ -27,6 +27,20 @@ abstract class AppValidators {
     }
     return null;
   }
+    static String? validatePhoneNumber(String? phoneNumber, BuildContext context) {
+    AppLocalizations appLocalizations = AppLocalizations.of(context)!;
+
+    RegExp regExp = RegExp(
+      r'^\+?(\d{1,3})?[-.\s]?(\(?\d{2,4}?\)?)?[-.\s]?(\d{3,4})[-.\s]?(\d{4})$',
+    );
+    if (phoneNumber == null || phoneNumber.trim().isEmpty) {
+      return appLocalizations.phone_required;
+    }
+    if (!regExp.hasMatch(phoneNumber)) {
+      return appLocalizations.phone_bad_format;
+    }
+    return null;
+  }
 
   static String? checkPassword;
   static String? validatePassword(String? password, BuildContext context) {
@@ -62,4 +76,8 @@ abstract class AppValidators {
     }
     return null;
   }
+
+
+
+
 }

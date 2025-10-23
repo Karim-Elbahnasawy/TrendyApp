@@ -77,7 +77,7 @@ class CustomProductItem extends StatelessWidget {
                     style: textTheme.displaySmall,
                   ),
                   SizedBox(width: 5.w),
-                  Icon(Icons.star_outline, color: Colors.amber),
+                  Icon(Icons.star_half, color: Colors.amber,size: 25,),
                 ],
               ),
             ],

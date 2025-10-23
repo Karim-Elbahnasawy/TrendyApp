@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:trendy_app/config/language/app_localizations.dart';
 import 'package:trendy_app/core/utils/app_assets.dart';
+import 'package:trendy_app/core/utils/app_colors.dart';
 import 'package:trendy_app/core/utils/app_icons.dart';
 import 'package:trendy_app/core/utils/app_routes.dart';
 import 'package:trendy_app/core/utils/app_validators.dart';
@@ -24,14 +25,17 @@ class _RegisterState extends State<Register> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   late final TextEditingController _nameController;
   late final TextEditingController _emailController;
+  late final TextEditingController _phoneNumberController;
   late final TextEditingController _passwordController;
   late final TextEditingController _rePasswordController;
+
 
   @override
   void initState() {
     super.initState();
     _nameController = TextEditingController();
     _emailController = TextEditingController();
+    _phoneNumberController = TextEditingController();
     _passwordController = TextEditingController();
     _rePasswordController = TextEditingController();
   }
@@ -57,12 +61,12 @@ class _RegisterState extends State<Register> {
           child: Column(
             children: [
               SvgPicture.asset(AppAssets.appLogo),
-              SizedBox(height: 25.h),
+              SizedBox(height: 20.h),
               Text(
                 appLocalizations.create_account,
                 style: textTheme.titleMedium,
               ),
-              SizedBox(height: 25.h),
+              SizedBox(height: 20.h),
               Form(
                 key: _formKey,
                 child: Padding(
@@ -72,6 +76,7 @@ class _RegisterState extends State<Register> {
                     bottom: MediaQuery.of(context).viewInsets.bottom,
                   ),
                   child: Column(
+spacing: 15.h,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       CustomTextFormField(
@@ -82,7 +87,7 @@ class _RegisterState extends State<Register> {
                         prefixIcon: Image.asset(AppIcons.email),
                         keyboardType: TextInputType.emailAddress,
                       ),
-                      SizedBox(height: 25.h),
+                 
                       CustomTextFormField(
                         validator: (value) =>
                             AppValidators.validateName(value, context),
@@ -91,7 +96,16 @@ class _RegisterState extends State<Register> {
                         prefixIcon: Image.asset(AppIcons.person),
                         keyboardType: TextInputType.name,
                       ),
-                      SizedBox(height: 25.h),
+                      CustomTextFormField(
+                        validator: (value) =>
+                            AppValidators.validatePhoneNumber(value, context),
+                        controller: _phoneNumberController,
+                        hintText: appLocalizations.phone_number,
+                        prefixIcon: Icon(Icons.phone,
+                         color: AppColors.black.withAlpha(120)
+                        ),
+                        keyboardType: TextInputType.name,
+                      ),
                       CustomTextFormField(
                         validator: (value) =>
                             AppValidators.validatePassword(value, context),
@@ -106,10 +120,10 @@ class _RegisterState extends State<Register> {
                             isSecurePassword
                                 ? Icons.visibility_off_outlined
                                 : Icons.visibility_outlined,
+                                color: AppColors.black.withAlpha(120)
                           ),
                         ),
                       ),
-                      SizedBox(height: 25.h),
                       CustomTextFormField(
                         validator: (value) =>
                             AppValidators.validateRePassword(value, context),
@@ -124,17 +138,16 @@ class _RegisterState extends State<Register> {
                             isSecureRePassword
                                 ? Icons.visibility_off_outlined
                                 : Icons.visibility_outlined,
+                                  color: AppColors.black.withOpacity(0.5),
                           ),
                         ),
                       ),
-                      SizedBox(height: 25.h),
                       CustomElvatedButton(
                         text: appLocalizations.create_account,
                         onPressed: () {
                           if (_formKey.currentState?.validate() == false)return;                  
                         },
                       ),
-                      SizedBox(height: 10.h),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -154,7 +167,7 @@ class _RegisterState extends State<Register> {
                           ),
                         ],
                       ),
-                      SizedBox(height: 20.h),
+                   
                       Align(
                         alignment: Alignment.center,
                         child: Text(
@@ -162,7 +175,7 @@ class _RegisterState extends State<Register> {
                           style: textTheme.bodySmall,
                         ),
                       ),
-                      SizedBox(height: 15.h),
+                     
                       Image.asset(
                         AppIcons.google,
                         width: 60,

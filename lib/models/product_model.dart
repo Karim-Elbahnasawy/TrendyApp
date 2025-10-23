@@ -9,7 +9,6 @@ class ProductModel {
   double price;
   double rating;
 
-
   ProductModel({
     required this.image,
     required this.name,
@@ -18,13 +17,39 @@ class ProductModel {
     required this.rating,
   });
 
- static List<ProductModel> products (BuildContext context) {
- AppLocalizations appLocalizations = AppLocalizations.of(context)!;
-   return [
-  ProductModel(image: AppAssets.shirt, name: appLocalizations.product_name, description: appLocalizations.product_description, price: 400, rating: 4),
-  ProductModel(image: AppAssets.shirt, name:  appLocalizations.product_name, description: appLocalizations.product_description, price: 400, rating: 4),
-  ProductModel(image: AppAssets.shirt, name:  appLocalizations.product_name, description: appLocalizations.product_description, price: 400, rating: 4),
-  ProductModel(image: AppAssets.shirt, name:  appLocalizations.product_name, description: appLocalizations.product_description, price: 250, rating: 5),
-    ];
-  }
+  static List<ProductModel> products = [
+    ProductModel(
+      image: AppAssets.shirt,
+      name: 'T_Shirt',
+      description:
+          'Material is cotton and one of the best seller item and provided from it 3 colors (red , black , blue)',
+      price: 400,
+      rating: 4,
+    ),
+    ProductModel(
+      image: AppAssets.shirt,
+      name: 'Shirt',
+      description:
+          'Material is cotton and one of the best seller item and provided from it 3 colors (red , black , blue)',
+      price: 400,
+      rating: 4,
+    ),
+    ProductModel(
+      image: AppAssets.shirt,
+      name: 'Skert',
+      description:
+          'Material is water prof and one of the best seller item and provided from it 3 colors (red , black , red)',
+
+      price: 400,
+      rating: 4,
+    ),
+    ProductModel(
+      image: AppAssets.shirt,
+      name: 'Pantalon',
+      description:
+          'Material is water prof and one of the best seller item and provided from it 3 colors (red , black , red)',
+      price: 400,
+      rating: 4,
+    ),
+  ];
 }

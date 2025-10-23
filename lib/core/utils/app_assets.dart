@@ -12,4 +12,10 @@ abstract class AppAssets {
   static const String mens = '$basePng/mens.png';
   static const String shooses = '$basePng/shooses.png';
   static const String womens = '$basePng/womens.png';
+  static const String avatar = '$basePng/avatar.jpg';
+  static const String cart = '$basePng/cart.png';
+  static const String favourite= '$basePng/favourite.png';
+
+  
+
 }

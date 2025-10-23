@@ -66,6 +66,11 @@ abstract class AppTheme {
         fontWeight: FontWeight.w800,
         color: AppColors.pink,
       ),
+      titleLarge: GoogleFonts.montserrat(
+        fontSize: 27.sp,
+        fontWeight: FontWeight.w600,
+        color: AppColors.black,
+      ),
       bodySmall: GoogleFonts.montserrat(
         fontSize: 16.sp,
         fontWeight: FontWeight.w600,
@@ -97,6 +102,11 @@ abstract class AppTheme {
         fontSize: 16.sp,
         fontWeight: FontWeight.w500,
         color: AppColors.white,
+      ),
+      bodyLarge: GoogleFonts.montserrat(
+        fontSize: 16.sp,
+        fontWeight: FontWeight.w600,
+        color: AppColors.grey,
       ),
       headlineSmall: GoogleFonts.montserrat(
         fontSize: 14.sp,
@@ -172,6 +182,11 @@ abstract class AppTheme {
         fontWeight: FontWeight.w800,
         color: AppColors.pink,
       ),
+       titleLarge: GoogleFonts.montserrat(
+        fontSize: 27.sp,
+        fontWeight: FontWeight.w600,
+        color: AppColors.white,
+      ),
       bodySmall: GoogleFonts.montserrat(
         fontSize: 16.sp,
         fontWeight: FontWeight.w600,
@@ -180,6 +195,11 @@ abstract class AppTheme {
       bodyMedium: GoogleFonts.montserrat(
         fontSize: 20.sp,
         fontWeight: FontWeight.w800,
+        color: AppColors.white,
+      ),
+       bodyLarge: GoogleFonts.montserrat(
+        fontSize: 16.sp,
+        fontWeight: FontWeight.w600,
         color: AppColors.white,
       ),
       labelSmall: GoogleFonts.montserrat(

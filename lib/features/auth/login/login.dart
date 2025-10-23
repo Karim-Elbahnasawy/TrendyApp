@@ -51,9 +51,9 @@ class _LoginState extends State<Login> {
           child: Column(
             children: [
               SvgPicture.asset(AppAssets.appLogo),
-              SizedBox(height: 25.h),
+              SizedBox(height: 20.h),
               Text(appLocalizations.welcome_Back, style: textTheme.titleMedium),
-              SizedBox(height: 25.h),
+              SizedBox(height: 20.h),
               Form(
                 key: _formKey,
                 child: Padding(
@@ -63,6 +63,7 @@ class _LoginState extends State<Login> {
                     bottom: MediaQuery.of(context).viewInsets.bottom,
                   ),
                   child: Column(
+                    spacing:15.h ,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       CustomTextFormField(
@@ -73,7 +74,7 @@ class _LoginState extends State<Login> {
                         prefixIcon: Image.asset(AppIcons.email),
                         keyboardType: TextInputType.emailAddress,
                       ),
-                      SizedBox(height: 25.h),
+                 
                       CustomTextFormField(
                         validator: (value) =>
                             AppValidators.validatePassword(value, context),
@@ -91,7 +92,7 @@ class _LoginState extends State<Login> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 5.h),
+                   
                       Align(
                         alignment: Alignment.centerRight,
                         child: CustomTextButton(
@@ -105,14 +106,14 @@ class _LoginState extends State<Login> {
                           },
                         ),
                       ),
-                      SizedBox(height: 20.h),
+                      
                       CustomElvatedButton(
                         text: appLocalizations.login,
                         onPressed: () {
                           if (_formKey.currentState?.validate() == false)return;
                         },
                       ),
-                      SizedBox(height: 10.h),
+                      
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -132,7 +133,7 @@ class _LoginState extends State<Login> {
                           ),
                         ],
                       ),
-                      SizedBox(height: 20.h),
+                    
                       Align(
                         alignment: Alignment.center,
                         child: Text(
@@ -140,7 +141,7 @@ class _LoginState extends State<Login> {
                           style: textTheme.bodySmall,
                         ),
                       ),
-                      SizedBox(height: 15.h),
+                    
                       Image.asset(
                         AppIcons.google,
                         width: 60,

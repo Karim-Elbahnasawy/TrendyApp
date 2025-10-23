@@ -2,6 +2,7 @@
     "create_account" : "Create Account",
     "email" : "Email",
     "password" : "Password",
+    "phone_number" : "Phone Number",
     "dark" : "Dark",
     "light" : "Light",
     "english" : "English",
@@ -29,6 +30,8 @@
     "name_length": "Name Must Be 6 Characters",
     "email_required": "Email Is Required",
     "email_bad_format": "Email bad format",
+    "phone_required": "Phone Number Is Required",
+    "phone_bad_format": "Phone Number Bad Format",
     "password_required": "Password Is Required",
     "weak_password": "Weak Password",
     "confirm_password_required": "Confirm Password Is Required",
@@ -50,9 +53,15 @@
      "add_to_cart" : "Add To Cart",
      "offer_title" :"You Can Buy Shirts",
      "product_name" : "T_Shirt",
-     "product_description" : "The Material Is Cotton",
+     "product_description" : "The Material Is Cotton And One Of The Most Seller Items In This Summer And Provide From It Many Colors",
      "product_price" : "400",
      "product_rate" : "4.5",
-     "discount" : "50-40 % OFF"
+     "discount" : "50-40 % OFF",
+     "edit_profile" : "Edit Profile",
+     "logout" : "Log Out",
+     "phone" : "Phone Number",
+     "location" : "Location",
+     "no_items_favourite" : "No Items Added To Favourite Yet",
+     "no_items_cart" : "No Items Added To Cart Yet"
     
 }

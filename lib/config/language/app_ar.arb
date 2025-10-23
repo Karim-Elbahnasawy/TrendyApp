@@ -2,6 +2,7 @@
     "create_account" : "انشاء حساب",
     "email" : "البريد الالكترونى",
     "password" : "كلمة المرور",
+    "phone_number" : "رقم الهاتف",
     "dark" : "داكن",
     "light" : "فاتح",
     "english" : "English",
@@ -29,6 +30,8 @@
     "name_length": "يجب أن يكون الاسم ستة أحرف",
     "email_required": "البريد الإلكتروني مطلوب",
     "email_bad_format": "تنسيق البريد الإلكتروني خاطئ",
+    "phone_required": "رقم الهاتف مطلوب",
+    "phone_bad_format": "تنسيق رقم الهاتف غير صحيح",
     "password_required": "كلمة المرور مطلوبة",
     "weak_password": "كلمة المرور ضعيفة",
     "confirm_password_required": "تأكيد كلمة المرور مطلوب",
@@ -42,7 +45,7 @@
     "kids": "الأطفال",
     "mens": "الرجال",
     "womens": "النساء",
-    "shoes": "الأحذية",
+    "shoses": "الأحذية",
     "shop_now": "تسوق الآن",
     "product_details": "تفاصيل المنتج",
     "buy_now": "اشترِ الآن",
@@ -52,6 +55,13 @@
     "product_description": "المادةالخام قطن",
     "product_price": "400",
     "product_rate": "4.5",
-    "discount": "50-40 % خصم"
+    "discount": "50-40 % خصم",
+    "profile" : "الملف الشخصى",
+    "edit_profile" : "تعديل الملف الشخصى",
+    "logout" : "تسجيل الخروج",
+    "phone" : "رقم الهاتف",
+    "location" : "الموقع",
+    "no_items_favourite": "لم تُضاف أي عناصر إلى المفضلة بعد",
+    "no_items_cart": "لم تُضاف أي عناصر إلى السلة بعد"
 
 }

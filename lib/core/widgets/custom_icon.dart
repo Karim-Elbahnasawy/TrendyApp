@@ -12,8 +12,8 @@ class CustomIcon extends StatelessWidget {
     return IconButton(
       onPressed: onPressed,
       icon: CircleAvatar(
-        backgroundColor: AppColors.pink,
-        foregroundColor: AppColors.white,
+        backgroundColor: AppColors.greyF3,
+        foregroundColor: AppColors.black,
         radius: 25,
         child: Icon(size: 25, icon),
       ),

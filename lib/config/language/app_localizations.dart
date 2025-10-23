@@ -116,6 +116,12 @@ abstract class AppLocalizations {
   /// **'Password'**
   String get password;
 
+  /// No description provided for @phone_number.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone Number'**
+  String get phone_number;
+
   /// No description provided for @dark.
   ///
   /// In en, this message translates to:
@@ -185,7 +191,7 @@ abstract class AppLocalizations {
   /// No description provided for @product_description.
   ///
   /// In en, this message translates to:
-  /// **'The Material Is Cotton'**
+  /// **'The Material Is Cotton And One Of The Most Seller Items In This Summer And Provide From It Many Colors'**
   String get product_description;
 
   /// No description provided for @payment_description.
@@ -277,6 +283,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Email bad format'**
   String get email_bad_format;
+
+  /// No description provided for @phone_required.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone Number Is Required'**
+  String get phone_required;
+
+  /// No description provided for @phone_bad_format.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone Number Bad Format'**
+  String get phone_bad_format;
 
   /// No description provided for @password_required.
   ///
@@ -415,6 +433,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'50-40 % OFF'**
   String get discount;
+
+  /// No description provided for @edit_profile.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Profile'**
+  String get edit_profile;
+
+  /// No description provided for @logout.
+  ///
+  /// In en, this message translates to:
+  /// **'Log Out'**
+  String get logout;
+
+  /// No description provided for @phone.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone Number'**
+  String get phone;
+
+  /// No description provided for @location.
+  ///
+  /// In en, this message translates to:
+  /// **'Location'**
+  String get location;
+
+  /// No description provided for @no_items_favourite.
+  ///
+  /// In en, this message translates to:
+  /// **'No Items Added To Favourite Yet'**
+  String get no_items_favourite;
+
+  /// No description provided for @no_items_cart.
+  ///
+  /// In en, this message translates to:
+  /// **'No Items Added To Cart Yet'**
+  String get no_items_cart;
 }
 
 class _AppLocalizationsDelegate

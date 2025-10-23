@@ -2,15 +2,21 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:provider/provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:trendy_app/config/language/app_localizations.dart';
 import 'package:trendy_app/core/utils/app_assets.dart';
 import 'package:trendy_app/core/utils/app_colors.dart';
+import 'package:trendy_app/core/utils/app_constants.dart';
+import 'package:trendy_app/core/widgets/custom_icon.dart';
 import 'package:trendy_app/features/main_layout/tabs/home_tab/all_products_grid_view.dart';
 import 'package:trendy_app/core/widgets/custom_text_form_field.dart';
 import 'package:trendy_app/features/main_layout/tabs/home_tab/category_item.dart';
 import 'package:trendy_app/features/main_layout/tabs/home_tab/offer_item.dart';
 import 'package:trendy_app/models/offer_model.dart';
+import 'package:trendy_app/providers/home_provider.dart';
+import 'package:trendy_app/providers/language_provider.dart';
+import 'package:trendy_app/providers/theme_provider.dart';
 
 class HomeTab extends StatefulWidget {
   const HomeTab({super.key});
@@ -26,7 +32,11 @@ class _HomeTabState extends State<HomeTab> {
   Widget build(BuildContext context) {
     final AppLocalizations appLocalizations = AppLocalizations.of(context)!;
     final TextTheme textTheme = Theme.of(context).textTheme;
-    CarouselSliderController? carouselController = CarouselSliderController();
+      CarouselSliderController? carouselController = CarouselSliderController();
+   final HomeProvider homeProvider = Provider.of<HomeProvider>(context);
+    final ThemeProvider themeProvider = Provider.of<ThemeProvider>(context);
+    final LanguageProvider languageProvider = Provider.of<LanguageProvider>(context);
+
     return Container(
       color: Theme.of(context).primaryColor,
       child: SafeArea(
@@ -37,15 +47,43 @@ class _HomeTabState extends State<HomeTab> {
               spacing: 16.h,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Center(
-                  child: SvgPicture.asset(
-                    AppAssets.logo,
-                    width: 60.w,
-                    height: 60.h,
-                    fit: BoxFit.cover,
-                  ),
-                ),
+                   Row(
+              
+               children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                spacing: 8.h,
+                children: [
+                  Text(appLocalizations.welcome_Back,style:textTheme.labelMedium?.copyWith(fontSize: 18),),
+                  Text('Karim Gamal',style: textTheme.labelMedium?.copyWith(fontSize: 18),)
+                ],
+              ),
+              Spacer(),
+                CustomIcon(
+                onPressed: () {
+                  languageProvider.currentLanguage == AppConstants.english
+                      ? languageProvider.changeAppLanguage(AppConstants.arabic)
+                      : languageProvider.changeAppLanguage(AppConstants.english);
+                },
+                icon: Icons.language,
+              ),
+               
+               
+                               CustomIcon(
+                onPressed: () {
+                  themeProvider.currentTheme == ThemeMode.light
+                      ? themeProvider.changeAppTheme(ThemeMode.dark)
+                      : themeProvider.changeAppTheme(ThemeMode.light);
+                },
+                icon: themeProvider.isDark ? Icons.dark_mode : Icons.light_mode,
+              ),
+               ],
+             ),
                 CustomTextFormField(
+                  onChanged: (input){
+                 homeProvider.filterHomeProductsBySearchKey(input);
+                 
+                  },
                   hintText: appLocalizations.search_for_any_product,
                   prefixIcon: Icon(Icons.search),
                 ),
