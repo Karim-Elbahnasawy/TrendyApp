@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
@@ -21,7 +22,7 @@ class TrendyApp extends StatelessWidget {
       minTextAdapt: true,
       builder: (context, child) => MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: AppRoutes.register,
+        initialRoute:FirebaseAuth.instance.currentUser == null? AppRoutes.login: AppRoutes.mainLayout,
         onGenerateRoute: AppRouter.router,
         theme: AppTheme.light,
         darkTheme: AppTheme.dark,

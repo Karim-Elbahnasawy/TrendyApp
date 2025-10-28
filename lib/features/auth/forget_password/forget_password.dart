@@ -1,10 +1,14 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:trendy_app/config/language/app_localizations.dart';
+import 'package:trendy_app/core/firebase/firebase_services.dart';
 import 'package:trendy_app/core/utils/app_assets.dart';
 import 'package:trendy_app/core/utils/app_icons.dart';
+import 'package:trendy_app/core/utils/app_routes.dart';
 import 'package:trendy_app/core/utils/app_validators.dart';
+import 'package:trendy_app/core/utils/dialogs/app_dialogs.dart';
 import 'package:trendy_app/core/widgets/custom_elvated_button.dart';
 import 'package:trendy_app/core/widgets/custom_text_form_field.dart';
 
@@ -80,9 +84,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                     
                       CustomElvatedButton(
                         text: appLocalizations.submit,
-                        onPressed: () {
-                          if (_formKey.currentState?.validate() == false)return;
-                        },
+                        onPressed: forgotPassword,
                       ),
                     ],
                   ),
@@ -93,5 +95,25 @@ class _ForgetPasswordState extends State<ForgetPassword> {
         ),
       ),
     );
+  }
+
+  void forgotPassword() async {
+     if (_formKey.currentState?.validate() == false)return;
+     try{
+      AppDialogs.showLoadingDialog(context);
+     await FirebaseServices.fogotPassword(_emailController.text);
+      AppDialogs.hideDialog(context);
+      AppDialogs.showDialogMessgage('Reset Password Message Sent', Colors.green);
+      Navigator.pushReplacementNamed(context, AppRoutes.login);
+     } on FirebaseAuthException{
+            AppDialogs.hideDialog(context);
+
+      AppDialogs.showDialogMessgage('Error Sending Reset Message', Colors.red);
+
+     }catch(e){
+      AppDialogs.hideDialog(context);
+      AppDialogs.showDialogMessgage('Failed To Send Reset Message', Colors.red);
+
+     }
   }
 }

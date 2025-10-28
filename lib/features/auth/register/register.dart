@@ -1,12 +1,15 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:trendy_app/config/language/app_localizations.dart';
+import 'package:trendy_app/core/firebase/firebase_services.dart';
 import 'package:trendy_app/core/utils/app_assets.dart';
 import 'package:trendy_app/core/utils/app_colors.dart';
 import 'package:trendy_app/core/utils/app_icons.dart';
 import 'package:trendy_app/core/utils/app_routes.dart';
 import 'package:trendy_app/core/utils/app_validators.dart';
+import 'package:trendy_app/core/utils/dialogs/app_dialogs.dart';
 import 'package:trendy_app/core/widgets/custom_elvated_button.dart';
 import 'package:trendy_app/core/widgets/custom_text_button.dart';
 import 'package:trendy_app/core/widgets/custom_text_form_field.dart';
@@ -28,7 +31,6 @@ class _RegisterState extends State<Register> {
   late final TextEditingController _phoneNumberController;
   late final TextEditingController _passwordController;
   late final TextEditingController _rePasswordController;
-
 
   @override
   void initState() {
@@ -76,18 +78,9 @@ class _RegisterState extends State<Register> {
                     bottom: MediaQuery.of(context).viewInsets.bottom,
                   ),
                   child: Column(
-spacing: 15.h,
+                    spacing: 15.h,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      CustomTextFormField(
-                        validator: (value) =>
-                            AppValidators.validateEmail(value, context),
-                        controller: _emailController,
-                        hintText: appLocalizations.email,
-                        prefixIcon: Image.asset(AppIcons.email),
-                        keyboardType: TextInputType.emailAddress,
-                      ),
-                 
                       CustomTextFormField(
                         validator: (value) =>
                             AppValidators.validateName(value, context),
@@ -98,11 +91,20 @@ spacing: 15.h,
                       ),
                       CustomTextFormField(
                         validator: (value) =>
+                            AppValidators.validateEmail(value, context),
+                        controller: _emailController,
+                        hintText: appLocalizations.email,
+                        prefixIcon: Image.asset(AppIcons.email),
+                        keyboardType: TextInputType.emailAddress,
+                      ),
+                      CustomTextFormField(
+                        validator: (value) =>
                             AppValidators.validatePhoneNumber(value, context),
                         controller: _phoneNumberController,
                         hintText: appLocalizations.phone_number,
-                        prefixIcon: Icon(Icons.phone,
-                         color: AppColors.black.withAlpha(120)
+                        prefixIcon: Icon(
+                          Icons.phone,
+                          color: AppColors.black.withAlpha(120),
                         ),
                         keyboardType: TextInputType.name,
                       ),
@@ -120,7 +122,7 @@ spacing: 15.h,
                             isSecurePassword
                                 ? Icons.visibility_off_outlined
                                 : Icons.visibility_outlined,
-                                color: AppColors.black.withAlpha(120)
+                            color: AppColors.black.withAlpha(120),
                           ),
                         ),
                       ),
@@ -138,15 +140,13 @@ spacing: 15.h,
                             isSecureRePassword
                                 ? Icons.visibility_off_outlined
                                 : Icons.visibility_outlined,
-                                  color: AppColors.black.withOpacity(0.5),
+                            color: AppColors.black.withOpacity(0.5),
                           ),
                         ),
                       ),
                       CustomElvatedButton(
                         text: appLocalizations.create_account,
-                        onPressed: () {
-                          if (_formKey.currentState?.validate() == false)return;                  
-                        },
+                        onPressed: createAccount,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -167,7 +167,7 @@ spacing: 15.h,
                           ),
                         ],
                       ),
-                   
+
                       Align(
                         alignment: Alignment.center,
                         child: Text(
@@ -175,7 +175,7 @@ spacing: 15.h,
                           style: textTheme.bodySmall,
                         ),
                       ),
-                     
+
                       Image.asset(
                         AppIcons.google,
                         width: 60,
@@ -203,5 +203,30 @@ spacing: 15.h,
     setState(() {
       isSecurePassword = !isSecurePassword;
     });
+  }
+
+  void createAccount() async {
+    if (_formKey.currentState?.validate() == false) return;
+    try {
+      AppDialogs.showLoadingDialog(context);
+      await FirebaseServices.register(
+        _emailController.text,
+        _passwordController.text,
+      );
+      AppDialogs.hideDialog(context);
+      AppDialogs.showDialogMessgage(
+        'Account Created Successfully',
+        Colors.green,
+      );
+      Navigator.pushReplacementNamed(context, AppRoutes.login);
+    } on FirebaseAuthException catch (ex) {
+      AppDialogs.hideDialog(context);
+      if (ex.code == 'email-already-in-use') {
+        AppDialogs.showDialogMessgage('Email Is Already Use', AppColors.red);
+      }
+    } catch (ex) {
+      AppDialogs.hideDialog(context);
+      AppDialogs.showDialogMessgage('Failed To Register', AppColors.red);
+    }
   }
 }

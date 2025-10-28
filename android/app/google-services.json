@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "153501374431",
+    "project_id": "trendyapp-37baf",
+    "storage_bucket": "trendyapp-37baf.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:153501374431:android:45bade6ddea28a1e03566a",
+        "android_client_info": {
+          "package_name": "com.example.trendy_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoGYvUtjgv7C0lg2wxl4KBVv2EZlUJhEs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

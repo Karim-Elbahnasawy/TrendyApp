@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
@@ -6,6 +7,7 @@ import 'package:trendy_app/core/utils/app_assets.dart';
 import 'package:trendy_app/core/utils/app_colors.dart';
 import 'package:trendy_app/core/utils/app_constants.dart';
 import 'package:trendy_app/core/utils/app_icons.dart';
+import 'package:trendy_app/core/utils/app_routes.dart';
 import 'package:trendy_app/core/widgets/custom_icon.dart';
 import 'package:trendy_app/core/widgets/custom_text_form_field.dart';
 import 'package:trendy_app/providers/language_provider.dart';
@@ -58,7 +60,11 @@ class ProfileTab extends StatelessWidget {
                    children: [
                      CustomElvatedButtonRow(appLocalizations: appLocalizations, text: appLocalizations.edit_profile, icon: Icons.edit_outlined, onPressed: () {  },),
                     SizedBox(width: 8.w),
-                    CustomElvatedButtonRow(appLocalizations: appLocalizations, text: appLocalizations.logout, icon: Icons.logout, onPressed: () {  },)
+                    CustomElvatedButtonRow(appLocalizations: appLocalizations, text: appLocalizations.logout, icon: Icons.logout, onPressed: () { 
+                      FirebaseAuth.instance.signOut();
+                          Navigator.pushReplacementNamed(context, AppRoutes.login);
+
+                     },),
                    ],
                  ),
 

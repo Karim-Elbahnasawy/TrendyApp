@@ -1,11 +1,15 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:trendy_app/config/language/app_localizations.dart';
+import 'package:trendy_app/core/firebase/firebase_services.dart';
 import 'package:trendy_app/core/utils/app_assets.dart';
+import 'package:trendy_app/core/utils/app_colors.dart';
 import 'package:trendy_app/core/utils/app_icons.dart';
 import 'package:trendy_app/core/utils/app_routes.dart';
 import 'package:trendy_app/core/utils/app_validators.dart';
+import 'package:trendy_app/core/utils/dialogs/app_dialogs.dart';
 import 'package:trendy_app/core/widgets/custom_elvated_button.dart';
 import 'package:trendy_app/core/widgets/custom_text_button.dart';
 import 'package:trendy_app/core/widgets/custom_text_form_field.dart';
@@ -63,7 +67,7 @@ class _LoginState extends State<Login> {
                     bottom: MediaQuery.of(context).viewInsets.bottom,
                   ),
                   child: Column(
-                    spacing:15.h ,
+                    spacing: 15.h,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       CustomTextFormField(
@@ -74,7 +78,7 @@ class _LoginState extends State<Login> {
                         prefixIcon: Image.asset(AppIcons.email),
                         keyboardType: TextInputType.emailAddress,
                       ),
-                 
+
                       CustomTextFormField(
                         validator: (value) =>
                             AppValidators.validatePassword(value, context),
@@ -92,7 +96,7 @@ class _LoginState extends State<Login> {
                           ),
                         ),
                       ),
-                   
+
                       Align(
                         alignment: Alignment.centerRight,
                         child: CustomTextButton(
@@ -106,14 +110,12 @@ class _LoginState extends State<Login> {
                           },
                         ),
                       ),
-                      
+
                       CustomElvatedButton(
                         text: appLocalizations.login,
-                        onPressed: () {
-                          if (_formKey.currentState?.validate() == false)return;
-                        },
+                        onPressed: login,
                       ),
-                      
+
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -133,7 +135,7 @@ class _LoginState extends State<Login> {
                           ),
                         ],
                       ),
-                    
+
                       Align(
                         alignment: Alignment.center,
                         child: Text(
@@ -141,7 +143,7 @@ class _LoginState extends State<Login> {
                           style: textTheme.bodySmall,
                         ),
                       ),
-                    
+
                       Image.asset(
                         AppIcons.google,
                         width: 60,
@@ -163,5 +165,30 @@ class _LoginState extends State<Login> {
     setState(() {
       isSecurePassword = !isSecurePassword;
     });
+  }
+
+  void login() async {
+    if (_formKey.currentState?.validate() == false) return;
+    try {
+      AppDialogs.showLoadingDialog(context);
+      UserCredential userCredential = await FirebaseServices.login(
+        _emailController.text,
+        _passwordController.text,
+      );
+      if (userCredential.user!.emailVerified) {
+        AppDialogs.hideDialog(context);
+        AppDialogs.showDialogMessgage('Login Successfully', Colors.green);
+        Navigator.pushReplacementNamed(context, AppRoutes.mainLayout);
+      } else {
+        AppDialogs.hideDialog(context);
+        AppDialogs.showDialogMessgage('Please Verify Your Email', Colors.green);
+      }
+    } on FirebaseAuthException {
+      AppDialogs.hideDialog(context);
+      AppDialogs.showDialogMessgage('Wrong Email Or Password', AppColors.red);
+    } catch (ex) {
+      AppDialogs.hideDialog(context);
+      AppDialogs.showDialogMessgage('Failed To Login', AppColors.red);
+    }
   }
 }
