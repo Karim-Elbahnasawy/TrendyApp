@@ -13,6 +13,7 @@ import 'package:trendy_app/core/utils/dialogs/app_dialogs.dart';
 import 'package:trendy_app/core/widgets/custom_elvated_button.dart';
 import 'package:trendy_app/core/widgets/custom_text_button.dart';
 import 'package:trendy_app/core/widgets/custom_text_form_field.dart';
+import 'package:trendy_app/models/user_model.dart';
 
 class Register extends StatefulWidget {
   const Register({super.key});
@@ -209,9 +210,17 @@ class _RegisterState extends State<Register> {
     if (_formKey.currentState?.validate() == false) return;
     try {
       AppDialogs.showLoadingDialog(context);
-      await FirebaseServices.register(
+      UserCredential userCredential = await FirebaseServices.register(
         _emailController.text,
         _passwordController.text,
+      );
+      await FirebaseServices.addUserToFireStore(
+        UserModel(
+          name: _nameController.text,
+          email: _emailController.text,
+          phoneNumber: _phoneNumberController.text,
+          id: userCredential.user!.uid,
+        ),
       );
       AppDialogs.hideDialog(context);
       AppDialogs.showDialogMessgage(

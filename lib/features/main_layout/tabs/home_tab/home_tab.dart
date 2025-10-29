@@ -14,6 +14,7 @@ import 'package:trendy_app/core/widgets/custom_text_form_field.dart';
 import 'package:trendy_app/features/main_layout/tabs/home_tab/category_item.dart';
 import 'package:trendy_app/features/main_layout/tabs/home_tab/offer_item.dart';
 import 'package:trendy_app/models/offer_model.dart';
+import 'package:trendy_app/providers/get_user_data_provider.dart';
 import 'package:trendy_app/providers/home_provider.dart';
 import 'package:trendy_app/providers/language_provider.dart';
 import 'package:trendy_app/providers/theme_provider.dart';
@@ -36,6 +37,7 @@ class _HomeTabState extends State<HomeTab> {
    final HomeProvider homeProvider = Provider.of<HomeProvider>(context);
     final ThemeProvider themeProvider = Provider.of<ThemeProvider>(context);
     final LanguageProvider languageProvider = Provider.of<LanguageProvider>(context);
+    final GetUserDataProvider getUserDataProvider = Provider.of<GetUserDataProvider>(context);
 
     return Container(
       color: Theme.of(context).primaryColor,
@@ -55,7 +57,7 @@ class _HomeTabState extends State<HomeTab> {
                 spacing: 8.h,
                 children: [
                   Text(appLocalizations.welcome_Back,style:textTheme.labelMedium?.copyWith(fontSize: 18),),
-                  Text('Karim Gamal',style: textTheme.labelMedium?.copyWith(fontSize: 18),)
+                  Text(getUserDataProvider.userModel?.name ?? '',style: textTheme.labelMedium?.copyWith(fontSize: 18),)
                 ],
               ),
               Spacer(),

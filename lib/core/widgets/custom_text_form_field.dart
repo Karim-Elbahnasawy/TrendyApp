@@ -11,6 +11,7 @@ class CustomTextFormField extends StatelessWidget {
     this.prefixIcon,
     this.keyboardType,
     this.obscureText = false, this.onChanged,
+    this.isEnabled = true,
   });
 
   final String? Function(String?)? validator;
@@ -21,10 +22,12 @@ class CustomTextFormField extends StatelessWidget {
   final TextInputType? keyboardType;
   final bool obscureText;
  final void Function(String)? onChanged;
+ final bool isEnabled;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      enabled: isEnabled,
       onChanged: onChanged,
       cursorColor: AppColors.pink,
       cursorWidth: 3,

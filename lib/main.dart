@@ -6,6 +6,7 @@ import 'package:trendy_app/config/prefs/cache_helper.dart';
 import 'package:trendy_app/firebase_options.dart';
 import 'package:trendy_app/providers/cart_provider.dart';
 import 'package:trendy_app/providers/favourite_provider.dart';
+import 'package:trendy_app/providers/get_user_data_provider.dart';
 import 'package:trendy_app/providers/home_provider.dart';
 import 'package:trendy_app/providers/language_provider.dart';
 import 'package:trendy_app/providers/theme_provider.dart';
@@ -23,7 +24,8 @@ void main() async {
         ChangeNotifierProvider(create: (context) => LanguageProvider()),
         ChangeNotifierProvider(create: (context)=> CartProvider()),
         ChangeNotifierProvider(create: (context)=> FavouriteProvider()),
-       ChangeNotifierProvider(create: (context)=> HomeProvider())
+       ChangeNotifierProvider(create: (context)=> HomeProvider()),
+       ChangeNotifierProvider(create: (context)=>GetUserDataProvider(),),
       ],
       child: const TrendyApp(),
     ),

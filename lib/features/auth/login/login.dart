@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:provider/provider.dart';
 import 'package:trendy_app/config/language/app_localizations.dart';
 import 'package:trendy_app/core/firebase/firebase_services.dart';
 import 'package:trendy_app/core/utils/app_assets.dart';
@@ -13,6 +14,7 @@ import 'package:trendy_app/core/utils/dialogs/app_dialogs.dart';
 import 'package:trendy_app/core/widgets/custom_elvated_button.dart';
 import 'package:trendy_app/core/widgets/custom_text_button.dart';
 import 'package:trendy_app/core/widgets/custom_text_form_field.dart';
+import 'package:trendy_app/providers/get_user_data_provider.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -47,6 +49,7 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     final TextTheme textTheme = Theme.of(context).textTheme;
     final AppLocalizations appLocalizations = AppLocalizations.of(context)!;
+    // final GetUserDataProvider getUserDataProvider = Provider.of(context);
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
